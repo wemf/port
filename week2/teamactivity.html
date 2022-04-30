@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team 5 week 1 activity</title>
+</head>
+<body>
+    <input type="text" id="istep1"/>
+    <button type="button" onclick="step1()">Step 1</button>
+    <div id="step1"></div>
+    <br/>
+    <input type="text" id="istep2"/>
+    <button type="button" onclick="step2()">Step 2</button>
+    <div id="step2"></div>
+    <br/>
+    <input type="text" id="istep3"/>
+    <button type="button" onclick="step3()">Step 3</button>
+    <div id="step3"></div>
+    <br/>
+    <h2>Calculator</h2>
+    <input type="text" id="num1"/>
+    <input type="text" id="num2"/>
+    <button type="button" onclick="calculate('sum')">Sum</button>
+    <button type="button" onclick="calculate('subs')">Substract</button>
+    <button type="button" onclick="calculate('mult')">Multiple</button>
+    <div id="result"></div>
+    <script>
+        function step1 () {            
+            document.getElementById("step1").innerHTML = document.getElementById("istep1").value
+        }
+        function step2 () {            
+            const number = Number(document.getElementById("istep2").value)
+            let sum = 0;
+            for(let i=1; i<=number; i++){
+                sum += i;
+            }
+            document.getElementById("step2").innerHTML = sum
+        }
+        function step3 () {            
+            const number1 = Number(document.getElementById("istep1").value)
+            const number2 = Number(document.getElementById("istep2").value)
+            const number3 = Number(document.getElementById("istep3").value)
+            document.getElementById("step3").innerHTML = number1 + number2 + number3
+        }
+
+        function calculate(operation){
+            const number1 = Number(document.getElementById("num1").value)
+            const number2 = Number(document.getElementById("num2").value)
+            let result = 0
+            switch (operation) {
+                case "sum":
+                    result = sum(number1, number2)
+                    break;
+                case "subs":
+                    result = subs(number1, number2)
+                    break;
+                case "mult":
+                    result = mult(number1, number2)
+                    break;
+                default:
+                    break;
+            }
+            document.getElementById("result").innerHTML = result
+        }
+        // Declaration function
+        function subs (num1, num2) {
+            return num1 - num2
+        }
+        // Function Expression
+        const mult = function (num1, num2) {
+            return num1 * num2
+        }
+        // Arrow function
+        const sum = (num1, num2) => {
+            return num1 + num2
+        }
+    </script>
+</body>
+</html>
