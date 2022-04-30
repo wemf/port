@@ -22,9 +22,9 @@
     <h2>Calculator</h2>
     <input type="text" id="num1"/>
     <input type="text" id="num2"/>
-    <button type="button" onclick="calculate('sum')">Sum</button>
-    <button type="button" onclick="calculate('subs')">Substract</button>
-    <button type="button" onclick="calculate('mult')">Multiple</button>
+    <button type="button" onclick="calculate(sum)">Sum</button>
+    <button type="button" onclick="calculate(subs)">Substract</button>
+    <button type="button" onclick="calculate(mult)">Multiple</button>
     <div id="result"></div>
     <script>
         function step1 () {            
@@ -49,19 +49,7 @@
             const number1 = Number(document.getElementById("num1").value)
             const number2 = Number(document.getElementById("num2").value)
             let result = 0
-            switch (operation) {
-                case "sum":
-                    result = sum(number1, number2)
-                    break;
-                case "subs":
-                    result = subs(number1, number2)
-                    break;
-                case "mult":
-                    result = mult(number1, number2)
-                    break;
-                default:
-                    break;
-            }
+            result = operation(number1, number2)
             document.getElementById("result").innerHTML = result
         }
         // Declaration function
