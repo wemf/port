@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CH 14</title>
+</head>
+<body>
+    <h1>Heading with a <span>span</span> element.</h1>
+    <p>A paragraph with <span>one</span>, <span>two</span> spans.</p>
+    <script>
+        const byTagName = (node, tagName) => {
+          const found = [];
+          tagName = tagName.toUpperCase();
+          const explore = (node) => {
+            for (let i = 0; i < node.childNodes.length; i++) {
+              let child = node.childNodes[i];
+              if (child.nodeType == document.ELEMENT_NODE) {
+                if (child.nodeName == tagName) found.push(child);
+                explore(child);
+              }
+            }
+          }
+          explore(node);
+          return found;
+        }
+        console.log(byTagName(document.body, "h1").length);
+        console.log(byTagName(document.body, "span").length);
+        const paragraph = document.querySelector("p");
+        console.log(byTagName(paragraph, "span").length);
+    </script>
+</body>
+</html>
