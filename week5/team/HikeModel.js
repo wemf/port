@@ -2,9 +2,8 @@ import HikeList from './HikeList.js';
 
 // Hike Model
 export default class HikeModel {
-    constructor(hikeListId) {
+    constructor() {
         // We need a constructor...but in this case it isn't doing much
-        this.hikeListId = hikeListId;
         this.hikeList = HikeList;
     }
     getAllHikes() {
