@@ -1,1 +1,1 @@
-# cit261 portfolio of work
+# WDD 330 Portfolio Class
