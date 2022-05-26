@@ -4,7 +4,7 @@ import {
     onSubmit
 } from './utilities.js';
 
-import Todos from './toDos.js';
+import Todos from './Todos.js';
 
 const TODO_List = new Todos(qs('.TODO__List')[0], "TODO_List");
 TODO_List.listTodos();
