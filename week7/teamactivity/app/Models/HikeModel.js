@@ -1,4 +1,4 @@
-import HikeList from './HikeList.js';
+import HikeList from '../Store/HikeList.js';
 
 // Hike Model
 export default class HikeModel {

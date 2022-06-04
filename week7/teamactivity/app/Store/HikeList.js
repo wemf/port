@@ -1,4 +1,4 @@
-const HikeList = [
+let HikeList = [
     {
         name: "Bechler Falls",
         imgSrc: "falls.jpg",
