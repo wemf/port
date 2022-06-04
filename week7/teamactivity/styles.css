@@ -1,0 +1,47 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem;
+    background: orange;
+    margin: 0;
+    font-size: 3rem;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 1.75rem;
+    background: orangered;
+    padding: .5rem;
+}
+
+.hikeStyles {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.image {
+    width: 300px;
+}
+
+.hike_article {
+    display: flex;
+    flex-direction: column;
+}
+
+.hike_content {
+    display: flex;
+    justify-content: space-around;
+}
+.hike_content_list {
+    min-width: 300px;
+}
