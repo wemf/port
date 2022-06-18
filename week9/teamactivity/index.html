@@ -9,42 +9,42 @@
 
 
   <div class="keys">
-    <div data-key="65" class="key">
+    <button type="button" data-key="65" class="key">
       <kbd>A</kbd>
       <span class="sound">clap</span>
-    </div>
-    <div data-key="83" class="key">
+    </button>
+    <button type="button" data-key="83" class="key">
       <kbd>S</kbd>
       <span class="sound">hihat</span>
-    </div>
-    <div data-key="68" class="key">
+    </button>
+    <button type="button" data-key="68" class="key">
       <kbd>D</kbd>
       <span class="sound">kick</span>
-    </div>
-    <div data-key="70" class="key">
+    </button>
+    <button type="button" data-key="70" class="key">
       <kbd>F</kbd>
       <span class="sound">openhat</span>
-    </div>
-    <div data-key="71" class="key">
+    </button>
+    <button type="button" data-key="71" class="key">
       <kbd>G</kbd>
       <span class="sound">boom</span>
-    </div>
-    <div data-key="72" class="key">
+    </button>
+    <button type="button" data-key="72" class="key">
       <kbd>H</kbd>
       <span class="sound">ride</span>
-    </div>
-    <div data-key="74" class="key">
+    </button>
+    <button type="button" data-key="74" class="key">
       <kbd>J</kbd>
       <span class="sound">snare</span>
-    </div>
-    <div data-key="75" class="key">
+    </button>
+    <button type="button" data-key="75" class="key">
       <kbd>K</kbd>
       <span class="sound">tom</span>
-    </div>
-    <div data-key="76" class="key">
+    </button>
+    <button type="button" data-key="76" class="key">
       <kbd>L</kbd>
       <span class="sound">tink</span>
-    </div>
+    </button>
   </div>
 
   <audio data-key="65" src="sounds/clap.wav"></audio>
@@ -59,6 +59,33 @@
 
 <script>
 
+function playSound(event){
+  const audio = document.querySelector(`audio[data-key="${event.keyCode}"]`);
+  if(!audio) return;
+  const key = document.querySelector(`button[data-key="${event.keyCode}"]`);
+  key.classList.add('playing');
+  const keyCounter = JSON.parse(sessionStorage.getItem(event.keyCode));
+  if(Number(keyCounter) < 10){
+    sessionStorage.setItem(event.keyCode, JSON.stringify(keyCounter+1));
+    key.classList.add('move-down-10px');
+  }
+  audio.currentTime = 0;
+  audio.play();
+}
+
+function endPlay(event){
+  const key = document.querySelector(`button[data-key="${event.keyCode}"]`);
+  if(!key) return;
+  key.classList.remove('playing');
+  const keyCounter = JSON.parse(sessionStorage.getItem(event.keyCode));
+  if(Number(keyCounter) === 10){
+    sessionStorage.setItem(event.keyCode, JSON.stringify(0));
+    key.classList.remove('move-down-10px');
+  }
+}
+
+window.addEventListener('keydown', playSound);
+window.addEventListener('keyup', endPlay);
 </script>
 
 
