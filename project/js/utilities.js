@@ -8,7 +8,7 @@ export function getJSON(url) {
             }
         })
         .catch(function(error) {
-            console.log(error);
+            console.error(error);
         });
 }
 export function qs(selector) {
@@ -23,4 +23,12 @@ export function onTouch(elementSelector, callback) {
 
 export function onSubmit(elementSelector, callback) {
     qs(elementSelector)[0].addEventListener('submit', callback);
+}
+
+export function readFromLS(key) {
+    return JSON.parse(localStorage.getItem(key));
+}
+
+export function writeToLS(key, data) {
+    localStorage.setItem(key, JSON.stringify(data));
 }
