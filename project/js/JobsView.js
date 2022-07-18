@@ -1,9 +1,18 @@
 import { onTouch } from './utilities.js';
 
 export default class JobsView {
-    constructor(){
+    constructor (){
         this.input = document.getElementById('search');
         this.searchResults = document.getElementById('search-results');
+    }
+
+    clearRender () {
+        this.searchResults.innerHTML = '';
+    }
+
+    renderLoading () {
+        this.clearRender();
+        this.searchResults.innerHTML = `<div class="lds-container"><div class="lds-ring"><div></div><div></div><div></div><div></div></div></div>`;
     }
 
     createJob (job) {
@@ -31,7 +40,7 @@ export default class JobsView {
     }
 
     renderJobs (jobs, actionStoreJob) {
-        this.searchResults.innerHTML = '';
+        this.clearRender();
         jobs.forEach(job => {
             const item = this.createJob(job);
             this.searchResults.appendChild(item);

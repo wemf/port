@@ -10,12 +10,11 @@ export default class JobsController {
     async searchJobs (event) {
         event.preventDefault();
         try {
-            this.JobsView.searchResults.innerHTML = '';
-            this.JobsView.searchResults.innerHTML = `<div class="lds-container"><div class="lds-ring"><div></div><div></div><div></div><div></div></div></div>`;
+            this.JobsView.renderLoading();
             const jobs = await this.JobModel.searchJobs(this.JobsView.input.value);
             this.JobsView.renderJobs(jobs, this.storeJob.bind(this));
         } catch (err) {
-            this.JobsView.searchResults.innerHTML = '';
+            this.JobsView.clearRender();
             console.error(err)
         }
     }
