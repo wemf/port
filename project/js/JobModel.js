@@ -25,8 +25,8 @@ export default class JobModel {
     return this._jobs.find(job => job?.id === id);
   }
 
-  setSavedJob(job) {
-    this._savedJobs = [...this._savedJobs, job];
+  addSavedJob(job) {
+    this._savedJobs = [job, ...this._savedJobs];
     writeToLS('SAVED_JOBS', this._savedJobs);
   }
 

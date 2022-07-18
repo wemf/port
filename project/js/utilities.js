@@ -22,7 +22,9 @@ export function onTouch(elementSelector, callback) {
 }
 
 export function onSubmit(elementSelector, callback) {
-    qs(elementSelector)[0].addEventListener('submit', callback);
+    qs(elementSelector).forEach(element => {
+        element.addEventListener('submit', callback);
+    });
 }
 
 export function readFromLS(key) {
