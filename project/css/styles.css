@@ -18,7 +18,7 @@
 
 .lds-container{
     display: flex;
-    height: calc(100vh - 175px);
+    height: calc(100vh - 205px);
     justify-content: center;
     align-items: center;
 }
@@ -104,6 +104,11 @@ header h1{
     text-align: center;
 }
 
+.app-nav {
+    display: flex;
+    justify-content: space-around;
+}
+
 .search-form {
     display: flex;
     margin: 1rem 0;
@@ -179,6 +184,45 @@ header h1{
     background-color: var(--red-color);
 }
 
+
+.job-vacancy__delete-button{
+    position: absolute;
+    bottom: 1rem;
+    right: 6.5rem;
+    background: var(--dark-blue-color);
+    color: var(--white-color);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    padding: 0.25rem 0.5rem;
+}
+
+.job-vacancy__delete-button:active{
+    transform: translateY(.25rem);
+    background-color: var(--red-color);
+}
+
+.job-vacancy__notes-button{
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    background: var(--dark-blue-color);
+    color: var(--white-color);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    padding: 0.25rem 0.5rem;
+}
+
+.job-vacancy__notes-button:active{
+    transform: translateY(.25rem);
+    background-color: var(--red-color);
+}
+
 .search-button {
     background: var(--dark-blue-color);
     color: var(--white-color);
@@ -195,6 +239,6 @@ header h1{
     background-color: var(--red-color);
 }
 
-#search-results {
-    min-height: calc(100vh - 175px);
+#search-results, #saved-jobs-el {
+    min-height: calc(100vh - 205px);
 }
