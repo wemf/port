@@ -18,7 +18,7 @@ It is determined by people between 18 and 60 years old, with an internet connect
  	 	 
 ## DESIGN STYLE
 
-### Icons:
+### ICONS:
 - [CSS Astrid Icons](https://css.gg/search)
 
 ### TYPOGRAPHY:
