@@ -282,3 +282,12 @@ header h1{
     flex-direction: column;
     gap: 0.5rem;
 }
+
+.app-nav a, .app-nav a:visited {
+    color: var(--dark-blue-color);
+}
+
+.app-nav a.app-nav--current {
+    color: var(--black-color);
+    text-decoration: none;
+}

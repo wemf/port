@@ -9,14 +9,17 @@ It is determined by people between 18 and 60 years old, with an internet connect
 - [Remotive Jobs](https://github.com/remotive-com/remote-jobs-api) API (as job search engine)
 - Localstorage (for notes and saved jobs)
 ## WIREFRAMES
-**HOME PAGE** 
-![HOME PAGE](./images/wireframes-home.png)
-**SAVED JOBS**
-![SAVED JOBS](./images/wireframes-saved-jobs.png)
-**SAVED JOB DETAILS**
-![SAVED JOB DETAILS](./images/wireframes-saved-jobs-details.png)
+**HOME PAGE**  
+![HOME PAGE](./images/wireframes-home.png)  
+**SAVED JOBS**  
+![SAVED JOBS](./images/wireframes-saved-jobs.png)  
+**SAVED JOB DETAILS**  
+![SAVED JOB DETAILS](./images/wireframes-saved-jobs-details.png)  
  	 	 
 ## DESIGN STYLE
+
+### Icons:
+- [CSS Astrid Icons](https://css.gg/search)
 
 ### TYPOGRAPHY:
 - Roboto Slab: Titles, subtitles, emphasis.
